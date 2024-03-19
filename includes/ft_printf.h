@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anchikri <anchikri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 20:50:05 by anchikri          #+#    #+#             */
-/*   Updated: 2024/03/19 16:43:26 by anchikri         ###   ########.fr       */
+/*   Created: 2023/10/30 08:20:21 by anchikri          #+#    #+#             */
+/*   Updated: 2023/11/16 12:06:19 by anchikri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-void	ft_putchar_fd(char c, int fd)
-{
-	write (fd, &c, 1);
-}
+# include <unistd.h>
+# include <stdarg.h>
+
+int		ft_printf(const char *s, ...);
+int		ft_print_char(int c);
+int		ft_print_str(char *s);
+int		ft_puthex(unsigned long n, char *hex, int ptr);
+int		ft_putnbr(int n);
+int		ft_uputnbr(unsigned int n);
+size_t	ft_strlen(const char *s);
+
+#endif
